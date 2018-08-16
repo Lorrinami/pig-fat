@@ -1,28 +1,76 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.roll-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 94.6%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.gift-one {
+    width: 100%;
+    height: 110px;
+    margin-bottom: 0.9%;
+    background-color: rgb(188, 255, 201);
 }
 
-.App-title {
-  font-size: 1.5em;
+.gift-two {
+    width: 29.6%;
+    height: 110px;
+    background-color: rgb(189, 255, 255);
 }
 
-.App-intro {
-  font-size: large;
+.gift-three {
+    width: 31%;
+    height: 110px;
+    margin: 0 1.4%;
+    background-color: rgb(205, 201, 255);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.gift-four {
+    width: 36.5%;
+    height: 110px;
+    background-color: rgb(251, 255, 197);
+}
+
+.gift-five {
+    width: 68.7%;
+    height: 110px;
+    margin-top: 0.9%;
+    background-color: rgb(255, 0, 255);
+}
+
+.gift-six {
+    width: 29.9%;
+    height: 110px;
+    margin-top: 0.9%;
+    margin-left: 1.4%;
+    background-color: #0ff;
+}
+
+.gift-seven {
+    width: 32.4%;
+    height: 110px;
+    margin-top: 0.9%;
+    background-color: #ff7f50;
+}
+
+.gift-eight {
+    width: 32.4%;
+    height: 110px;
+    margin: 0 1.4%;
+    margin-top: 0.9%;
+    background-color: #ff1493;
+}
+
+.gift-nine {
+    width: 32.4%;
+    height: 110px;
+    margin-top: 0.9%;
+    background-color: #2f4f4f;
 }
