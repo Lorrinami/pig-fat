@@ -5,6 +5,11 @@ const DATA_FILE = "data.json";
 var moment = require('moment');
 
 app.get('/get_rollnum', function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     fs.readFile(DATA_FILE, function (err, data) {
         if (err) {
             console.error(err);
@@ -16,6 +21,11 @@ app.get('/get_rollnum', function (req, res) {
 });
 
 app.get('/get_record', function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     fs.readFile(DATA_FILE, function (err, data) {
         if (err) {
             console.error(err);
@@ -27,6 +37,11 @@ app.get('/get_record', function (req, res) {
 });
 
 app.get('/roll', function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     let rand = Math.random() * 1000
     let goodId = 9
     if (rand >= 0 && rand <= 40) {
