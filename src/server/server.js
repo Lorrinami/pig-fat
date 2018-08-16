@@ -44,13 +44,13 @@ app.get('/roll', function (req, res) {
 
     let rand = Math.random() * 1000
     let goodId = 9
-    if (rand >= 0 && rand <= 40) {
+    if (rand >= 0 && rand <= 20) {
         goodId = 1
 
-    } else if (rand > 40 && rand <= 100) {
+    } else if (rand > 20 && rand <= 80) {
         goodId = 2
 
-    } else if (rand > 100 && rand <= 180) {
+    } else if (rand > 80 && rand <= 180) {
         goodId = 3
 
     } else if (rand > 180 && rand <= 330) {
