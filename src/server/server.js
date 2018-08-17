@@ -1,6 +1,11 @@
+const fs = require('fs'), path = require('path');
+var http = require('http');
+var https = require('https');
+var privateKey = fs.readFileSync('sslcert/server.key', 'utf8');
+var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
 var app = express();
-const fs = require('fs'), path = require('path');
 const DATA_FILE = "data.json";
 var moment = require('moment');
 
@@ -100,6 +105,12 @@ app.get('/roll', function (req, res) {
     });
 });
 
-var server = app.listen(3000, function () {
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
 
-});
+httpServer.listen(8080);
+httpsServer.listen(3000);
+
+// var server = app.listen(3000, function () {
+//
+// });
