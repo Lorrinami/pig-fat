@@ -86,6 +86,7 @@ app.get('/roll', function (req, res) {
             // let year = moment("2018-08-16T09:33:17.267Z").format('YYYY.MM.DD');
             // let time = (moment("2018-08-16T09:33:17.267Z").format('A') === 'AM' ? '上午' : '下午') + moment("2018-08-16T09:33:17.267Z").format('h:mm');
             // console.log(year + " " + time);
+            
             const parseData = JSON.parse(data);
 
             if (parseData.rollNumber > 0) {
