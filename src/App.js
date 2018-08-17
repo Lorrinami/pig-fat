@@ -67,6 +67,7 @@ class App extends Component {
     onRoll() {
         if (this.state.rollNumber <= 0) {
             alert("警告胖猪，不要过分！")
+            return
         }
 
         if (this.click) {
