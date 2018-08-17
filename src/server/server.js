@@ -187,12 +187,12 @@ app.get('/roll', function (req, res) {
     });
 });
 
-var httpServer = http.createServer(app);
+// var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
 // httpServer.listen(8080);
 httpsServer.listen(3000);
 
-var server = app.listen(3000, function () {
-
-});
+// var server = app.listen(3000, function () {
+//
+// });
