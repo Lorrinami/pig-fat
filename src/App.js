@@ -162,7 +162,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <h1>给七夕的🐷</h1>
+                <h1>给七夕的<span role="img" aria-labelledby="jsx-a11y/accessible-emoji">🐷</span></h1>
                 <div className="roll-content">
                     <div className={giftOne}>{"全套 Love 卡"}</div>
                     <div className={giftTwo}>{"净化卡\n（妖魔鬼怪全走开）"}</div>
