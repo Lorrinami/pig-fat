@@ -110,7 +110,7 @@ app.get('/roll', function (req, res) {
 
 // httpServer.listen(8080);
 // httpsServer.listen(3000);
-
+app.use(express.static('static'));
 var server = app.listen(3000, function () {
 
 });
