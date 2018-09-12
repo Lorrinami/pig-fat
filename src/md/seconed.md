@@ -106,15 +106,63 @@ npm install --global eslint-config-airbnbeslint@^2.9.0 eslint-pluginjsx-a11y@^1.
 以上就是开始使用代码检查工具最简单也最常用的方式。
 
 
-高阶函数
+1.高阶函数
 const add = (x, y) => x + y
 const log = func => (...args) => {
-console.log(...args)
+console.log(...args)//传入的2,3,最后调用add
 return func(...args)
 }
 const logAdd = log(add)
-
+logAdd(2,3)
 (...args) => {
 console.log(...args)
 return func(...args)
 }
+
+2.纯粹性
+纯粹函数是指它不产生副作用，也就是说它不会改变自身作用域以外的任何东西
+const add = (x, y) => x + y
+它可以运行多次，并且总能得到同样的结果，因为没有将数据存储在其他地方，也没有修改
+任何东西。
+
+3.不可变性
+可以用 concat 方法改写以上函数，使其满足不可变性。 concat 方法会返回新数组，而且
+不会修改原数组：
+const add3 = arr => arr.concat(3)
+const myArr = [1, 2]
+const result1 = add3(myArr) // [1, 2, 3]
+const result2 = add3(myArr) // [1, 2, 3]
+此时即便运行该函数两次， myArr 仍然保有初始值
+
+4.柯里化
+柯里化是函数式编程的常用技巧。柯里化过程就是将多参数函数转换成单参数函数，这些单
+参数函数的返回值也是函数。我们通过一个示例来弄清这个概念。
+我们从前文的 add 函数入手，将它转换成柯里化函数。
+原先的写法如下所示：
+const add = (x, y) => x + y
+将其定义为以下写法：
+const add = x => y => {
+console.log(x,y)
+}
+然后按以下方式使用它：
+const add1 = add(1)
+add1(2) // 3
+add1(3) // 4
+这种函数写法相当方便，因为传入第一个参数后，第一个值被保留起来，返回的第二个函数
+可以多次复用
+
+const add = x => y => {
+console.log(x,y)
+}
+const add1 = add(1)//赋值给x,第一个
+add1(5)//1,5
+
+5.组合
+const add = (x, y) => x + y
+const square = x => x * x
+这两个函数可以组合创建一个新函数，用于两数相加，再对结果求平方：
+const addAndSquare = (x, y) => square(add(x, y))
+遵循这个范式就可以编写小而简单、易于测试的纯粹函数，然后再将它们组合起来使用。
+
+React 构建 UI 的方式和函数式编程原则有很多相似之处，了解得越多，也就能写出越好的
+代码。
