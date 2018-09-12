@@ -1,13 +1,13 @@
 const fs = require('fs'), path = require('path');
-var http = require('http');
-var https = require('https');
-var privateKey = fs.readFileSync('server.key', 'utf8');
-var certificate = fs.readFileSync('server.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
-var express = require('express');
-var app = express();
+let http = require('http');
+let https = require('https');
+let privateKey = fs.readFileSync('server.key', 'utf8');
+let certificate = fs.readFileSync('server.crt', 'utf8');
+let credentials = {key: privateKey, cert: certificate};
+let express = require('express');
+let app = express();
 const DATA_FILE = "data.json";
-var moment = require('moment');
+let moment = require('moment');
 
 app.get('/get_rollnum', function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
