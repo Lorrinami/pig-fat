@@ -2,7 +2,6 @@
   "name": "pig-fat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lorrinami.github.io/pig-fat/",
   "dependencies": {
     "classnames": "^2.2.6",
     "fs": "0.0.1-security",
@@ -17,10 +16,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "jest": "jest",
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0"
+    "flow-bin": "^0.80.0",
+    "gh-pages": "^1.2.0",
+    "jest": "^23.6.0"
   }
 }
